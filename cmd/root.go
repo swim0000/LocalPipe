@@ -25,7 +25,6 @@ var rootCmd = &cobra.Command{
 															         
 LocalPipe is a streamlined, local development pipeline tool written in Go with Cobra.
 
-Type lp to get started!
 															`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:

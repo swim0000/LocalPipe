@@ -48,8 +48,5 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	rootCmd.PersistentFlags().StringVarP(&csvFilePath, "file", "f", "", "Path to the CSV file")
-	csvCountCmd.MarkFlagRequired("file")
-	rootCmd.AddCommand(csvCountCmd)
 
 }

@@ -39,6 +39,10 @@ var csvCountCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(csvCountCmd)
 
+	rootCmd.PersistentFlags().StringVarP(&csvFilePath, "file", "f", "", "Path to the CSV file")
+	csvCountCmd.MarkFlagRequired("file")
+	rootCmd.AddCommand(csvCountCmd)
+
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

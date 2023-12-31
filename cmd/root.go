@@ -23,9 +23,7 @@ var rootCmd = &cobra.Command{
 	$$$$$$$$\\$$$$$$  |\$$$$$$$\\$$$$$$$ |$$ |$$ |      $$ |$$ |       
 	\________|\______/  \_______|\_______|\__|\__|      \__|\__| 
 															         
-LocalPipe is a streamlined, local development pipeline tool written in Go with Cobra.
-
-															`,
+LocalPipe is a streamlined, local development pipeline tool written in Go with Cobra.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -50,4 +48,8 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.PersistentFlags().StringVarP(&csvFilePath, "file", "f", "", "Path to the CSV file")
+	csvCountCmd.MarkFlagRequired("file")
+	rootCmd.AddCommand(csvCountCmd)
+
 }

@@ -17,7 +17,7 @@ var csvFilePath string
 
 var csvCountCmd = &cobra.Command{
 	Use:   "csvcount",
-	Short: "Counts number of entries in a csv file.",
+	Short: "Counts the number of entries in a csv file.",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		openfile, err := os.Open(csvFilePath)
@@ -37,7 +37,6 @@ var csvCountCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(csvCountCmd)
 
 	rootCmd.PersistentFlags().StringVarP(&csvFilePath, "file", "f", "", "Path to the CSV file")
 	csvCountCmd.MarkFlagRequired("file")
